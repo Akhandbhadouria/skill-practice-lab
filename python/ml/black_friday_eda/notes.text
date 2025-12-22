@@ -1,0 +1,31 @@
+Import Libraries → Load all required ML, preprocessing, and plotting packages.
+
+Load Data → Read test & train CSV files and merge into one dataframe.
+
+Label Encoding → Convert Gender and Age categorical values into numbers.
+
+One-Hot Encoding → Convert City_Category (A, B, C) into dummy numeric columns.
+
+Fill Missing Values → Replace NaN in Product_Category columns with mode value.
+
+Clean Data → Remove “+” in Stay_In_Current_City_Years and convert to int.
+
+Visualization → Plot bar graphs (Age vs Purchase, Occupation vs Purchase).
+
+Split Data → Separate rows having Purchase (train) and missing ones (test).
+
+Select Features → X = independent variables, y = target (Purchase).
+
+Train-Test Split → Divide into training (67%) and testing (33%) sets.
+
+Drop Unnecessary Columns → Remove Product_ID before scaling.
+
+Feature Scaling → Standardize X using StandardScaler (fit_transform & transform).
+
+Model Training → Train Linear Regression model on training data.
+
+Prediction → Predict Purchase for test data.
+
+Residual Plot → Visualize prediction errors (pred - y_test).
+
+R² Score → Evaluate model accuracy (how well predictions fit actual data).

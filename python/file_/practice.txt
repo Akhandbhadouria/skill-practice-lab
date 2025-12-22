@@ -1,0 +1,3 @@
+Python is fun.
+File I/O is useful.
+We can read and write files.
