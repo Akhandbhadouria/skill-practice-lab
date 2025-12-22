@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            margin-top: 30px;
+            color: #333;
+        }
+
+        .card {
+            background-color: white;
+            width: 300px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+        }
+
+        .card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #007bff;
+        }
+
+        .card p {
+            margin: 8px 0;
+            font-size: 16px;
+            color: #444;
+        }
+
+        .btn {
+            margin-top: 15px;
+            padding: 10px 15px;
+            font-size: 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style> 
+<body>
+    <h1>hey! here are the detail of random users</h1>
+    <div class="card">
+        <img src="" alt="" id="user_id">
+        <p id="name"></p>
+        <p id="username"></p>
+        <p id="gmail"></p>
+        <p id="password"></p>
+        <button class="btn">get new user</button>
+    </div>
+</body>
+<script>
+
+    document.querySelector(".btn").addEventListener("click", function () {
+        const api = 'https://randomuser.me//api'
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", api)
+        xhr.onreadystatechange = function () {
+            console.log(xhr.readyState);
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                const parse_data = JSON.parse(this.responseText);
+                const data = parse_data.results[0];
+
+                const img = document.getElementById("user_id");
+                const name = document.getElementById("name");
+                const username = document.getElementById("username");
+                const gmail = document.getElementById("gmail");
+                const password = document.getElementById("password");
+                img.src = data.picture.medium;
+                name.innerText = data.name.first;
+                gmail.innerText = data.email
+                username.innerText = data.login.username;
+                password.innerText = data.login.password;
+
+
+
+
+            }
+            
+        }
+        
+        xhr.send()
+    })
+
+
+
+
+</script>
+
+</html>

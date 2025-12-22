@@ -1,0 +1,12 @@
+ .body {
+            color: aliceblue;
+            background-color: olivedrab;
+        }
+        .language{
+            background-color: aquamarine;
+            width: 20vh;
+        }
+    .app_li{
+           color: blue;
+           font-weight: bold;
+        }

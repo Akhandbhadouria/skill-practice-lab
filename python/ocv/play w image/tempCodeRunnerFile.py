@@ -1,0 +1,1 @@
+source "/Users/lambardaar/Desktop/STUDY/python/openCV/venv 2/bin/activate"

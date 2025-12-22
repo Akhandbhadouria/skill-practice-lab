@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: #414141;
+        color: whitesmoke;
+    }
+</style>
+<!-- // ---------------------------------------------------- random color project ------------------------------------------------------>
+<body>
+    <h1> </h1>
+    <button id="start">start</button>  
+    <button id="stop">stop</button>
+</body>
+<script>
+    const heading = document.querySelector("h1");
+    const body = document.querySelector("body");
+    const start = document.getElementById("start")
+    const stop = document.getElementById("stop")
+    let array = ["red", "blue", "black", "white", "orange", "pink"];
+let i=0;
+    let interval;
+    start.addEventListener("click", function () {
+        interval=setInterval(() => {
+            heading.innerText=`hey you current background color is ${array[i]}`;
+            body.style.backgroundColor=array[i];
+            i=(i+1)%array.length;
+        }, 1000);
+    })
+    stop.addEventListener("click",function(){
+        clearInterval(interval);
+    })
+</script>
+
+</html>

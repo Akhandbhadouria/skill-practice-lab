@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1></h1>
+    <p></p>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+
+<script>
+
+    const head = document.querySelector("h1");
+    const para = document.querySelector("p");
+
+    let changeTimeoutId;     // to hold the timeout id
+    let intervalId;          // to hold the interval id
+    let t = 0;
+
+    document.querySelector("#start").addEventListener("click", function () {
+        head.innerHTML = "hey akhand";
+
+        changeTimeoutId = setTimeout(function () {
+            head.innerHTML = "hey aman";
+        }, 5000);
+
+        intervalId = setInterval(function () {
+            t += 1;
+            para.innerText = t;
+        }, 1000);
+    });
+
+    document.querySelector("#stop").addEventListener("click", function () {
+        clearTimeout(changeTimeoutId); // stop setTimeout
+        clearInterval(intervalId);     // stop setInterval
+        console.log("All tasks stopped.");
+    });
+</script>
+
+</html>
