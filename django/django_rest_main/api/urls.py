@@ -4,6 +4,12 @@ urlpatterns=[
      path('student/',views.Studentview),
      path('student/<int:pk>',views.student_view,name="student_view"),
 
-    path('employees/',views.EmployeeList.as_view(),name="employees"),
-    path('employees/<int:pk>/',views.Employee_detail.as_view(),name="employees_detail")
+    # path('employees/',views.EmployeeList.as_view(),name="employees"),
+    # path('employees/<int:pk>/',views.Employee_detail.as_view(),name="employees_detail"),
+
+    path('blogs/',views.Blog_view.as_view()),
+    path('comments/',views.comments_view.as_view()),
+    
+    path('blog/<int:pk>',views.blog_detail.as_view()),
+    path('comments/<int:pk>',views.comment_detail.as_view()),
 ] 

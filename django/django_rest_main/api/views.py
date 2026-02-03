@@ -118,9 +118,12 @@ class Employee_detail(APIView):
 # Best for	Small APIs	Real projects
 # DRF power	Limited	Full
 
-"""
-#---------------------------------------crud operations using mixins
 
+
+
+
+#---------------------------------------crud operations using mixins
+"""
 from.serializers import Emp_ser
 from employees.models import Employees
 from rest_framework import generics, mixins
@@ -147,7 +150,10 @@ class Employee_detail(mixins.RetrieveModelMixin,mixins.UpdateModelMixin,mixins.D
 
 """
 
-#generics
+
+# ------------------------------------------generics------------------------------------------
+"""
+
 from rest_framework.views import APIView
 from.serializers import Emp_ser
 from employees.models import Employees
@@ -159,4 +165,30 @@ class EmployeeList(generics.ListCreateAPIView):
 class Employee_detail(generics.RetrieveUpdateDestroyAPIView):
     queryset=Employees.objects.all()
     serializer_class=Emp_ser
+    lookup_field="pk"
+
+"""
+
+from blog.serializers import Comment_seri,Blod_seri
+from blog.models import Comment,Blog
+from rest_framework import generics, mixins
+
+class Blog_view(generics.ListCreateAPIView):
+    queryset=Blog.objects.all()
+    serializer_class=Blod_seri
+    
+    
+class comments_view(generics.ListCreateAPIView):
+    queryset=Comment.objects.all()
+    serializer_class=Comment_seri
+
+
+class blog_detail(generics.RetrieveUpdateDestroyAPIView):
+    queryset=Blog.objects.all()
+    serializer_class=Blod_seri
+    lookup_field="pk"
+
+class comment_detail(generics.RetrieveUpdateDestroyAPIView):
+    queryset=Comment.objects.all()
+    serializer_class=Comment_seri
     lookup_field="pk"
