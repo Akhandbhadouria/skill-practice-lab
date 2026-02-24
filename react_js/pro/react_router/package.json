@@ -1,0 +1,23 @@
+{
+  "name": "react_router",
+  "version": "1.0.0",
+  "description": "A React application using React Router for navigation.",
+  "main": "src/main.jsx",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.3",
+    "vite": "^7.1.7"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

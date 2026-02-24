@@ -1,0 +1,40 @@
+@layer components {
+  .glass-header {
+    @apply sticky top-0 z-30 bg-white/70 backdrop-blur-md border-b border-gray-200 shadow-md;
+  }
+  .glass-footer {
+    @apply bg-white/70 backdrop-blur-md border-t border-gray-200 shadow-md;
+  }
+  .container-inner {
+    @apply w-full max-w-7xl mx-auto px-4;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-lg font-medium transition duration-200 ease-in-out shadow-md;
+  }
+  .btn-emerald {
+    @apply bg-emerald-600 text-white hover:bg-emerald-700 active:bg-emerald-800;
+  }
+  .btn-ghost {
+    @apply bg-transparent text-emerald-700 hover:bg-emerald-50;
+  }
+  .nav-link {
+    @apply px-3 py-2 text-sm font-medium text-gray-700 rounded-lg hover:bg-emerald-50 hover:text-emerald-600 transition duration-200 ease-in-out;
+  }
+  .input-base {
+    @apply px-3 py-2 rounded-lg bg-white text-gray-900 outline-none focus:bg-gray-50 border border-gray-200 w-full shadow-sm transition duration-200 ease-in-out;
+  }
+  .card {
+    @apply bg-white/70 backdrop-blur-md border border-gray-200 rounded-lg shadow-lg;
+  }
+  .page-bg {
+    @apply min-h-screen bg-gray-50;
+  }
+  .heading {
+    @apply text-gray-900 font-semibold;
+  }
+  .subtle {
+    @apply text-gray-700;
+  }
+}
+
+
